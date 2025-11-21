@@ -1,2 +1,3 @@
 # Not-the-Bees-
-Bee-swatting game in C++
+command line bee survival game in c++
+run .cpp file in c++ compiler (VSCode, XCode)
