@@ -1,19 +1,9 @@
 //
 //  main.cpp
-//  CS31 Project 7
 //
 //  Created by Sienna Curry on 12/5/24.
-//
 
 // bees.cpp
-
-// Portions you are to complete are marked with a TODO: comment.
-// We've provided some incorrect return statements (so indicated) just
-// to allow this skeleton program to compile and run, albeit incorrectly.
-// The first thing you probably want to do is implement the trivial
-// functions (marked TRIVIAL).  Then get Room::display going.  That gives
-// you more flexibility in the order you tackle the rest of the functionality.
-// As you finish implementing each TODO: item, remove its TODO: comment.
 
 #include <iostream>
 #include <string>
@@ -514,9 +504,6 @@ int randInt(int min, int max)
 
 void thisFunctionWillNeverBeCalled()
 {
-      // If the student deleted or changed the interfaces to the public
-      // functions, this won't compile.  (This uses magic beyond the scope
-      // of CS 31.)
 
     Bee(static_cast<Room*>(0), 1, 1);
     CHECKTYPE(Bee, row, int, () const);
@@ -594,25 +581,6 @@ void doBasicTests()
         assert(andBoard.beeCount() == 3  &&  andBoard.numBeesAt(1, 3) == 1);
         pp->moveOrSwat(UP);
         assert(andBoard.beeCount() == 2  &&  andBoard.numBeesAt(1, 3) == 0);
-          // If the program crashes after leaving this compound statement, you
-          // are probably messing something up when you delete a dead Bee
-          // (or you have mis-coded the destructor).
-          //
-          // Draw a picture of your m_bees array before attcking
-          // and also note the values of m_nBees or any other variables you
-          // might have that are involved with the number of Bees.  Trace
-          // through your code step by step as the Bees die and are
-          // removed, updating the picture according to what the code says, not
-          // what you want it to do.  If you don't see a problem then, try
-          // tracing through the destruction of the room.
-          //
-          // If you execute the code, use the debugger to check on the values
-          // of key variables at various points.  If you didn't try to learn
-          // to use the debugger, insert statements that write the values of
-          // key variables to cerr so you can trace the execution of your code
-          // and see the first place where something has gone amiss.  (Comment
-          // out the call to clearScreen in Room::display so that your output
-          // doesn't disappear.)
     }
     cout << "Passed all basic tests" << endl;
 }
@@ -633,13 +601,6 @@ int main()
 //  clearScreen implementation
 ///////////////////////////////////////////////////////////////////////////
 
-// DO NOT MODIFY OR REMOVE ANYTHING BETWEEN HERE AND THE END OF THE FILE!!!
-// THE CODE IS SUITABLE FOR VISUAL C++, XCODE, AND g++/g31 UNDER LINUX.
-
-// Note to Xcode users:  clearScreen() will just write a newline instead
-// of clearing the window if you launch your program from within Xcode.
-// That's acceptable.  (The Xcode output window doesn't have the capability
-// of being cleared.)
 
 #ifdef _WIN32
 
@@ -665,7 +626,7 @@ void clearScreen()
 #include <cstring>
 #include <cstdlib>
 
-void clearScreen()  // will just write a newline in an Xcode output window
+void clearScreen()  // will just write a newline in an output window
 {
     static const char* term = getenv("TERM");
     if (term == nullptr  ||  strcmp(term, "dumb") == 0)
